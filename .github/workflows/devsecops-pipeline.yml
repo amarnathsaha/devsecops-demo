@@ -1,4 +1,4 @@
-name: Learning Github Actions CI Pipeline
+name: Learning-Github-Actions-CI-Pipeline
 run-name: ${{ github.actor }} is learing github actions
 on: [push]
 jobs:
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4
       - name: secret scanning
         run: echo "secret scan"
       - name: sast
