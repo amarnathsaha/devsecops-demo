@@ -1,18 +1,23 @@
 name: Learning-Github-Actions-CI-Pipeline
-run-name: ${{ github.actor }} is learing github actions
+run-name: ${{ github.actor }} is learning github actions
+
 on: [push]
+
 jobs:
- First-workflow:
-  build:
+  First-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: secret scanning
+
+      - name: Secret scanning
         run: echo "secret scan"
-      - name: sast
+
+      - name: SAST
         run: echo "performing sast"
-      - name: sca
+
+      - name: SCA
         run: echo "performing sca"
-      - name: docker scan
+
+      - name: Docker scan
         run: echo "performing docker scan"
