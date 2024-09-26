@@ -1,0 +1,30 @@
+name: Learning Github Actions CI Pipeline
+run-name: ${{ github.actor }} is learing github actions
+# Trigger the workflow on push or pull request to the main branch
+on: [push]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs that will run in the workflow
+jobs:
+	First-workflow: ## Job Name
+  build:
+    # Define the environment where the job will run
+    runs-on: ubuntu-latest ##runners (GitHub provides to us) It is slave
+
+    # Steps for the job
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: secret scanning
+      run: echo "secret scan"
+    - name: sast
+      run: echo "performing sast"
+    - name: sca
+      run: echo "performing sca"
+    - name: docker scan
+      run: echo "performing docker scan"
